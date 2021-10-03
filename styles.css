@@ -7,17 +7,19 @@
     border: 1px solid #ccc;
     display: block;
     padding: 0.75rem 1.25rem;
-    position: relative;
 }
 
 .block_students_list_item {
+    align-items: center;
     background-color: transparent;
     border: 1px solid #9fa4a8;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 5px 0;
     padding: 5px;
-    position: relative;
-    overflow: hidden;
 }
 
 .block_students_list_item.active {
@@ -27,11 +29,11 @@
 
 .block_students_additional {
     display: none;
-    margin: 10px 0 0;
 }
 
 .block_students_list_item.active .block_students_additional {
     display: block;
+    margin: 10px 0 0;
 }
 
 .block_students_button {
@@ -41,9 +43,6 @@
     font-size: 16px;
     height: 20px;
     padding: 0;
-    position: absolute;
-    right: 20px;
-    top: 20px;
     width: 20px;
 }
 
@@ -51,10 +50,15 @@
     outline: 0;
 }
 
-.block_students_button .fa-times,
-.block_students_list_item.active .fa-chevron-down {
+.block_students_button .saclose,
+.block_students_button .saopen {
+    margin-right: 0.5rem;
+}
+
+.block_students_button .saclose,
+.block_students_list_item.active .saopen {
     display: none;
 }
-.block_students_list_item.active .block_students_button .fa-times {
+.block_students_list_item.active .block_students_button .saclose {
     display: block;
 }

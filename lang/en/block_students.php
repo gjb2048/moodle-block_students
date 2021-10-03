@@ -25,4 +25,3 @@
 $string['pluginname'] = 'Student information';
 $string['students:addinstance'] = 'Add a new student block';
 $string['listing'] = 'List of students';
-$string['label'] = 'Student name: ';

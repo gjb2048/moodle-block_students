@@ -54,10 +54,12 @@
         <ul class="block_students_list">
             {{#studentlist}}
                 <li class="block_students_list_item">
-                    {{{pic}}}{{name}}
+                    <div>
+                        {{{pic}}}{{name}}
+                    </div>
                     <button class="block_students_button">
-                        <i class="icon fa fa-chevron-down fa-fw iconsmall"></i>
-                        <i class="icon fa fa-times fa-fw iconsmall"></i>
+                        <i class="fa fa-chevron-down saopen"></i>
+                        <i class="fa fa-times saclose"></i>
                     </button>
                     <span class="block_students_additional">
                         {{email}}
