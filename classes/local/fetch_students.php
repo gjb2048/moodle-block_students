@@ -19,6 +19,7 @@
  *
  * @package   block_students
  * @copyright  2021 Richard Jones <richardnz@outlook.com>
+ * @copyright  2021 G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}.
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -95,14 +96,20 @@ class fetch_students implements renderable, templatable {
                  AND r.roleid = :roleid
                  AND u.suspended = :status";
 
-        $students = $DB->get_records_sql($sql, ['courseid' => $courseid,  // Current course.
-                                                'roleid' => 5,            // Student role.
-                                                'status' => 0]);          // Not suspended.
+        $students = $DB->get_records_sql(
+            $sql,
+            [
+                'courseid' => $courseid,  // Current course.
+                'roleid' => 5,            // Student role.
+                'status' => 0             // Not suspended.
+            ]
+        );
 
         // Grab the url of the user profile picture.
+        $userpicturefields = implode(',', \core_user\fields::get_picture_fields());
+        // Gets id,picture,firstname,lastname,firstnamephonetic,lastnamephonetic,middlename,alternatename,imagealt,email.
         foreach ($students as $student) {
-            $rs = $DB->get_record_select("user", "id = '$student->id'", null,
-                    \user_picture::fields());
+            $rs = $DB->get_record_select("user", "id = '$student->id'", null, $userpicturefields);
             $student->pic = $OUTPUT->user_picture($rs);
         }
 

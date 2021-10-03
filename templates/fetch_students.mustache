@@ -54,7 +54,11 @@
         <ul class="block_students_list">
             {{#studentlist}}
                 <li class="block_students_list_item">
-                    {{{pic}}} {{name}}
+                    {{{pic}}}{{name}}
+                    <button class="block_students_button">
+                        <i class="icon fa fa-chevron-down fa-fw iconsmall"></i>
+                        <i class="icon fa fa-times fa-fw iconsmall"></i>
+                    </button>
                     <span class="block_students_additional">
                         {{email}}
                         <br>
@@ -62,21 +66,16 @@
                         <br>
                         {{access}}
                     </span>
-                    <button class="block_students_button">
-                        <i class="icon fa fa-chevron-down fa-fw iconsmall"></i>
-                    </button>
-                    <button class="block_students_button">
-                        <i class="icon fa fa-times fa-fw iconsmall"></i>
-                    </button>
                 </li>
             {{/studentlist}}
         </ul>
     </div>
-        {{#js}}
-    require(['block_students/user_info'],
-            function(module) {
-                module.get_info();
-            }
-    );
-    {{/js}}
 </div>
+
+{{#js}}
+    require(['block_students/user_info'],
+        function(module) {
+            module.get_info();
+        }
+    );
+{{/js}}

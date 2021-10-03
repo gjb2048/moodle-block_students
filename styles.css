@@ -1,13 +1,15 @@
 .block_students_header {
-    color:#37308f;
+    color: #37308f;
 }
+
 .block_students_list {
-    position:relative;
-    display:block;
+    background-color: #eed9b9;
+    border: 1px solid #ccc;
+    display: block;
     padding: 0.75rem 1.25rem;
-    background-color:#eed9b9;
-    border:1px solid #ccc;
+    position: relative;
 }
+
 .block_students_list_item {
     background-color: transparent;
     border: 1px solid #9fa4a8;
@@ -17,38 +19,42 @@
     position: relative;
     overflow: hidden;
 }
+
 .block_students_list_item.active {
     background-color: #fff;
     box-shadow: 0 3px 6px #555, 0 3px 6px #555;
 }
+
 .block_students_additional {
     display: none;
     margin: 10px 0 0;
 }
+
 .block_students_list_item.active .block_students_additional {
     display: block;
 }
+
 .block_students_button {
     background-color: transparent;
     border: 0;
-    color: #37308f;;
+    color: #37308f;
     font-size: 16px;
+    height: 20px;
     padding: 0;
     position: absolute;
-    top: 20px;
     right: 20px;
-    height: 20px;
+    top: 20px;
     width: 20px;
 }
+
 .block_students_button:focus {
     outline: 0;
 }
-.block_students_button .fa-times {
-    display:none;
+
+.block_students_button .fa-times,
+.block_students_list_item.active .fa-chevron-down {
+    display: none;
 }
 .block_students_list_item.active .block_students_button .fa-times {
-    display:block;
-}
-.block_students_list_item.active .fa-chevron-down {
-    display:none;
+    display: block;
 }

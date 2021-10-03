@@ -19,10 +19,12 @@
  *
  * @package   block_students
  * @copyright  2021 Richard Jones <richardnz@outlook.com>
+ * @copyright  2021 G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}.
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'block_students';
-$plugin->version = 2021053100;
-$plugin->requires = 2020060900;
+$plugin->version = 2021100300;
+$plugin->requires  = 2021051700.00; // 3.11 (Build: 20210517).
+$plugin->supported = array(311, 311);
