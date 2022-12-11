@@ -21,8 +21,8 @@
  * @copyright  2021 Richard Jones <richardnz@outlook.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 use \block_students\local\fetch_students;
-defined('MOODLE_INTERNAL') || die();
 
 /**
  * Class students minimal required block class.

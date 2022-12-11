@@ -87,14 +87,14 @@ class fetch_students implements renderable, templatable {
     private static function get_course_students($courseid) {
         global $DB, $OUTPUT;
 
-        $sql = "SELECT u.id, u.firstname, u.lastname, u.email, u.lastaccess, u.lastip, u.suspended
-                FROM {course} c
-                JOIN {context} x ON c.id = x.instanceid
-                JOIN {role_assignments} r ON r.contextid = x.id
-                JOIN {user} u ON u.id = r.userid
-               WHERE c.id = :courseid
-                 AND r.roleid = :roleid
-                 AND u.suspended = :status";
+        $sql = "SELECT u.id, u.firstname, u.lastname, u.email, u.lastaccess, u.lastip, u.suspended ".
+               "FROM {course} c ".
+               "JOIN {context} x ON c.id = x.instanceid ".
+               "JOIN {role_assignments} r ON r.contextid = x.id ".
+               "JOIN {user} u ON u.id = r.userid ".
+               "WHERE c.id = :courseid ".
+               "AND r.roleid = :roleid ".
+               "AND u.suspended = :status";
 
         $students = $DB->get_records_sql(
             $sql,
@@ -107,7 +107,7 @@ class fetch_students implements renderable, templatable {
 
         // Grab the url of the user profile picture.
         $userpicturefields = implode(',', \core_user\fields::get_picture_fields());
-        // Gets id,picture,firstname,lastname,firstnamephonetic,lastnamephonetic,middlename,alternatename,imagealt,email.
+        // Gets id, picture, firstname, lastname, firstnamephonetic, lastnamephonetic, middlename, alternatename, imagealt, email.
         foreach ($students as $student) {
             $rs = $DB->get_record_select("user", "id = '$student->id'", null, $userpicturefields);
             $student->pic = $OUTPUT->user_picture($rs);
