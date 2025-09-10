@@ -6,20 +6,20 @@
     background-color: #eed9b9;
     border: 1px solid #ccc;
     display: block;
-    padding: 0.75rem 1.25rem;
+    padding: 0.5rem;
 }
 
 .block_students_list_item {
     align-items: center;
-    background-color: transparent;
+    background-color: #eee;
     border: 1px solid #9fa4a8;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 5px 0;
-    padding: 5px;
+    margin: 0.25rem 0;
+    padding: 0.25rem;
 }
 
 .block_students_list_item.active {
@@ -42,6 +42,7 @@
     color: #37308f;
     font-size: 16px;
     height: 20px;
+    margin: auto;
     padding: 0;
     width: 20px;
 }
@@ -53,6 +54,7 @@
 .block_students_button .saclose,
 .block_students_button .saopen {
     margin-right: 0.5rem;
+    vertical-align: top;
 }
 
 .block_students_button .saclose,

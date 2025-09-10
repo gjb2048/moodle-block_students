@@ -4,6 +4,7 @@ Changes
 V405.1.0
 ---------
 1. Moodle 4.5 version.
+2. Tidy CSS.
 
 V401.1.0
 ---------
