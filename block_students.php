@@ -22,7 +22,7 @@
  * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
-use \block_students\local\fetch_students;
+use block_students\local\fetch_students;
 
 /**
  * Class students minimal required block class.

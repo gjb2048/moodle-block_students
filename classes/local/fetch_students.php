@@ -66,14 +66,14 @@ class fetch_students implements renderable, templatable {
         $data = new stdClass();
         $data->header = $this->header;
         $data->headerclass = 'block_students_header';
-        $data->studentlist = array();
+        $data->studentlist = [];
 
         // Prepare a list of student users.
         $students = self::get_course_students($this->courseid);
 
         // Select the data to be shown in the template.
         foreach ($students as $student) {
-            $list = array();
+            $list = [];
             $list['name'] = $student->lastname . ', ' . $student->firstname;
             $list['email'] = $student->email;
             $list['ip'] = ($student->lastip == null) ? 'no ip data' : $student->lastip;
@@ -109,7 +109,7 @@ class fetch_students implements renderable, templatable {
             [
                 'courseid' => $courseid,  // Current course.
                 'roleid' => 5,            // Student role.
-                'status' => 0             // Not suspended.
+                'status' => 0,             // Not suspended.
             ]
         );
 
