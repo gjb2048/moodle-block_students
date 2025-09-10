@@ -18,8 +18,8 @@
  * block_students main file
  *
  * @package   block_students
- * @copyright  2021 Richard Jones <richardnz@outlook.com>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2021 Richard Jones <richardnz@outlook.com>
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
 use \block_students\local\fetch_students;
@@ -28,7 +28,6 @@ use \block_students\local\fetch_students;
  * Class students minimal required block class.
  *
  */
-
 class block_students extends block_base {
     /**
      * Initialize our block with a language string.
@@ -37,8 +36,12 @@ class block_students extends block_base {
         $this->title = get_string('pluginname', 'block_students');
     }
 
+    /**
+     * Get the content of the block.
+     */
     public function get_content() {
         global $OUTPUT;
+
         // Do we have any content?
         if ($this->content !== null) {
             return $this->content;
@@ -59,6 +62,7 @@ class block_students extends block_base {
 
         return $this->content;
     }
+
     /**
      * This is a list of places where the block may or
      * may not be added.
@@ -66,8 +70,9 @@ class block_students extends block_base {
     public function applicable_formats() {
         return ['all' => false, 'course-view' => true];
     }
+
     /**
-     * Dis-allow multiple instances of the block.
+     * Disallow multiple instances of the block.
      */
     public function instance_allow_multiple() {
         return false;

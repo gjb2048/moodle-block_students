@@ -18,12 +18,13 @@
  * block_students output.
  *
  * @package   block_students
- * @copyright  2021 Richard Jones <richardnz@outlook.com>
- * @copyright  2021 G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}.
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2021 Richard Jones <richardnz@outlook.com>
+ * @copyright 2021 G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}.
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 namespace block_students\local;
+
 use renderable;
 use renderer_base;
 use templatable;
@@ -35,24 +36,30 @@ use stdClass;
  * @var header - string heading for the list
  * @var courseid - int the id of the course the block is in.
  */
-
 class fetch_students implements renderable, templatable {
 
+    /** @var string Header text. */
     protected $header;
+
+    /** @var int Course id. */
     protected $courseid;
 
     /**
      * Constructor.
      *
-     * @param header - string heading for the list
-     * @param courseid - int the id of the course the block is in.
+     * @param string $header - string heading for the list.
+     * @param int $courseid The id of the course the block is in.
      */
     public function __construct($header, $courseid) {
         $this->header = $header;
         $this->courseid = $courseid;
     }
 
-    // Prepare the data for output by the template.
+    /**
+     * Prepare the data for output by the template.
+     *
+     * @param renderer_base $output - Output instance.
+     */
     public function export_for_template(renderer_base $output) {
         global $USER;
 
@@ -79,10 +86,11 @@ class fetch_students implements renderable, templatable {
         // Return data for use by template.
         return $data;
     }
+
     /**
-     * Query the DB for a list of course users (students only)
+     * Query the DB for a list of course users (students only).
      *
-     * @param courseid - int the id of the course the block is in.
+     * @param int $courseid The id of the course the block is in.
      */
     private static function get_course_students($courseid) {
         global $DB, $OUTPUT;

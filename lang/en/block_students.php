@@ -12,14 +12,14 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * block_students language file
  *
  * @package   block_students
- * @copyright  2021 Richard Jones <richardnz@outlook.com>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2021 Richard Jones <richardnz@outlook.com>
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 // General strings.
 $string['pluginname'] = 'Student information';

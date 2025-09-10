@@ -12,21 +12,21 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * block_students version file
+ * block_students version file.
  *
  * @package   block_students
- * @copyright  2021 Richard Jones <richardnz@outlook.com>
- * @copyright  2021 G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}.
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright 2021 Richard Jones <richardnz@outlook.com>
+ * @copyright 2021 G J Barnard - {@link http://moodle.org/user/profile.php?id=442195}.
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'block_students';
-$plugin->version = 2022121100;
-$plugin->requires  = 2022112800.00; // 4.1 (Build: 20221128).
-$plugin->supported = array(401, 401);
-$plugin->release = '401.1.0';
+$plugin->version = 2025091000;
+$plugin->requires = 2024100700.00; // 4.5 (Build: 20241007).
+$plugin->supported = [405, 405];
+$plugin->release = '405.1.0';
 $plugin->maturity = MATURITY_STABLE;
